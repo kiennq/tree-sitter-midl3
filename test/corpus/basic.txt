@@ -1,0 +1,106 @@
+==========
+Basic test
+==========
+
+// Photo.idl
+/*
+  Test
+*/
+namespace PhotoEditor
+{
+    delegate void RecognitionHandler(Boolean arg); // delegate type, for an event.
+
+    [
+        uuid(12345678-1234-1234-1234-123456789012),
+        version(1.0),
+        helpstring("Photo Class")
+    ]
+    runtimeclass Photo : Windows.UI.Xaml.Data.INotifyPropertyChanged // interface.
+    {
+        Photo(); // constructors.
+        Photo(Windows.Storage.StorageFile imageFile);
+
+        String ImageName{ get; }; // read-only property.
+        Single SepiaIntensity; // read-write property.
+
+        Windows.Foundation.IAsyncAction StartRecognitionAsync(); // (asynchronous) method.
+
+        [
+            Windows.Foundation.Metadata.DefaultOverload,
+            Windows.Foundation.Metadata.Overload("StartRecognitionAsync")
+        ]
+        {
+            event RecognitionHandler ImageRecognized; // event.
+        }
+    }
+}
+
+---
+
+(source_file
+  (comment
+    (comment_line))
+  (comment
+    (comment_block))
+  (namespace
+    (namespace_identifier)
+    (block
+      (type)
+      (builtin_type)
+      (identifier)
+      (builtin_type)
+      (identifier)
+      (comment
+        (comment_line))
+      (attribute)
+      (type_declaration
+        (type_identifier)
+        (identifier)
+        (comment_line)
+        (block
+          (identifier)
+          (comment
+            (comment_line))
+          (identifier)
+          (identifier)
+          (identifier)
+          (builtin_type)
+          (identifier)
+          (block
+            (identifier))
+          (comment
+            (comment_line))
+          (builtin_type)
+          (identifier)
+          (comment
+            (comment_line))
+          (identifier)
+          (identifier)
+          (comment
+            (comment_line))
+          (attribute)
+          (block
+            (type)
+            (identifier)
+            (identifier)
+            (comment
+              (comment_line))))))))
+
+==============
+Namespace test
+==============
+
+namespace PhotoEditor
+
+delegate void RecognitionHandler(Boolean arg); // delegate type, for an event.
+
+---
+
+(source_file
+  (namespace (namespace_identifier))
+  (type)
+  (builtin_type)
+  (identifier)
+  (builtin_type)
+  (identifier)
+  (comment (comment_line)))

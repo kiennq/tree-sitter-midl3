@@ -1,0 +1,38 @@
+{
+  "$schema": "https://tree-sitter.github.io/tree-sitter/assets/schemas/config.schema.json",
+  "grammars": [
+    {
+      "name": "midl3",
+      "camelcase": "MIDL3",
+      "title": "MIDL3",
+      "scope": "source.midl3",
+      "file-types": [
+        "idl"
+      ],
+      "injection-regex": "^midl3$",
+      "class-name": "TreeSitterMidl3"
+    }
+  ],
+  "metadata": {
+    "version": "0.1.0",
+    "license": "MIT",
+    "description": "midl3 grammar for tree-sitter",
+    "authors": [
+      {
+        "name": "Kien Nguyen"
+      }
+    ],
+    "links": {
+      "repository": "https://github.com/kiennq/tree-sitter-midl3"
+    }
+  },
+  "bindings": {
+    "c": true,
+    "go": true,
+    "node": true,
+    "python": true,
+    "rust": true,
+    "swift": true,
+    "zig": false
+  }
+}
